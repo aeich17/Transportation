@@ -1,59 +1,17 @@
-public class Plane {
-    private int speed;
-    private double cost;
-    private String purchaseType;
-    private String numPassengers;
+public class Plane { // extends AirTransportation
     private String engine;
     private int wingspan;
 
 
 
     public Plane(int speed, double cost, String purchaseType, String numPassengers, String engine, int wingspan){
-        this.speed = speed;
-        this.cost = cost;
-        this.purchaseType = purchaseType;
-        this.numPassengers = numPassengers;
         this.engine = engine;
         this.wingspan = wingspan;
-
     }
 
-    public int getSpeed() {
-        return this.speed;
-    }
-
-    public double getCost() {
-        return this.cost;
-    }
-
-    public String getPurchaseType() {
-        return this.numPassengers;
-    }
-
-    public String getNumPassengers() {
-        return this.numPassengers;
-    }
-
-    public String getEngine() { 
-        return engine; }
+    public String getEngine() { return engine; }
 
     public int getWingspan() { return wingspan; }
-
-    public void setSpeed(int speed){
-        this.speed = speed;
-    }
-
-    public void setCost(double cost){
-        this.cost = cost;
-    }
-
-    public void setPurchaseType(String purchaseType){
-        this.purchaseType = purchaseType;
-    }
-
-    public void setNumPassengers(String numPassengers){
-        this.numPassengers = numPassengers;
-    }
 
     public void setEngine(String engine) { this.engine = engine; }
 
