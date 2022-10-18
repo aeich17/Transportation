@@ -3,7 +3,7 @@ public class HotAirBalloon extends AirTransportation {
     private int numBurners;
 
 
-    public HotAirBalloon(int speed, double cost, String purchaseType, String numPassengers, String engineType, String pattern, int numBurners){
+    public HotAirBalloon(int speed, double cost, String purchaseType, int numPassengers, String engineType, String pattern, int numBurners){
         super(speed, cost, purchaseType, numPassengers, engineType);
         this.pattern = pattern;
         this.numBurners = numBurners;
