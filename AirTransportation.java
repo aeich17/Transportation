@@ -1,6 +1,6 @@
 public class AirTransportation extends Transportation {
     private String engineType;
-    public AirTransportation(String purchaseType, int speed, int numPassengers, double cost, String engineType) {
+    public AirTransportation(int speed, double cost, int numPassengers, String purchaseType, String engineType) {
         super(speed, cost, purchaseType, numPassengers);
         this.engineType = engineType;
     }
