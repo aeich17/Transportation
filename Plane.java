@@ -17,6 +17,20 @@ public class Plane extends AirTransportation{
     public void setNumEngine(int numEngine) { this.numEngine = numEngine; }
 
     public void setWingspan(int wingspan) { this.wingspan = wingspan;}
+    
+    public double totalCost(){
+        int numPassengers = getNumPassengers();
+        double costPerTicket = getCost();
+
+        double finalTotalCost = numPassengers * costPerTicket;
+
+        return finalTotalCost;
+    }
+
+    public String location(){
+        String planeLocation = "Go to ILM Airport at 9:30am";
+        return planeLocation;
+    }
 
     @Override
     public String toString(){
