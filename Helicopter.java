@@ -4,8 +4,8 @@ public class Helicopter extends AirTransportation {
 
 
 
-    public Helicopter(int speed, double cost, String purchaseType, String numPassengers, int numRotors, int length){
-        super(speed, cost, purchaseType, numPassengers);
+    public Helicopter(int speed, double cost, String purchaseType, String numPassengers, String engineType, int numRotors, int length){
+        super(speed, cost, purchaseType, numPassengers, engineType);
         this.numRotors = numRotors;
         this.length = length;
     }
@@ -17,4 +17,9 @@ public class Helicopter extends AirTransportation {
     public void setNumRotors(int numRotors) { this.numRotors = numRotors; }
 
     public void setLength(int length) { this.length = length; }
+
+    @Override
+    public String toString(){
+        return String.format("%sNumber of Rotors:%-12dLength:%-10d%n",super.toString(),numRotors, length);
+    }
 }
