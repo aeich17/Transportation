@@ -2,7 +2,7 @@ public class Dirigible extends AirTransportation  {
     private int volume;
     private int length;
 
-    public Dirigible(int speed, double cost, String purchaseType, String numPassengers, String engineType, int volume, int length) {
+    public Dirigible(int speed, double cost, String purchaseType, int numPassengers, String engineType, int volume, int length) {
         super(speed, cost, purchaseType, numPassengers, engineType);
         this.volume = volume;
         this.length = length;
