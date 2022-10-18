@@ -15,6 +15,20 @@ public class Dirigible extends AirTransportation  {
     public void setVolume(int volume) { this.volume = volume; }
 
     public void setLength(int length) { this.length = length; }
+    
+    public double totalCost(){
+        int numPassengers = getNumPassengers();
+        double costPerTicket = getCost();
+
+        double finalTotalCost = numPassengers * costPerTicket;
+
+        return finalTotalCost;
+    }
+
+    public String location(){
+        String dirigibleLocation = "Go to ILM Airport at 8:00am";
+        return dirigibleLocation;
+    }
 
     @Override
     public String toString(){
