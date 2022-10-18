@@ -17,6 +17,20 @@ public class Helicopter extends AirTransportation {
     public void setNumRotors(int numRotors) { this.numRotors = numRotors; }
 
     public void setLength(int length) { this.length = length; }
+    
+    public double totalCost(){
+        int numPassengers = getNumPassengers();
+        double costPerTicket = getCost();
+
+        double finalTotalCost = numPassengers * costPerTicket;
+
+        return finalTotalCost;
+    }
+
+    public String location(){
+        String heliLocation = "Go to ILM Airport at 5:00pm";
+        return heliLocation;
+    }
 
     @Override
     public String toString(){
