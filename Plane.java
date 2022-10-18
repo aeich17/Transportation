@@ -4,7 +4,7 @@ public class Plane extends AirTransportation{
 
 
 
-    public Plane(int speed, double cost, String purchaseType, String numPassengers, String engineType, int numEngine, int wingspan){
+    public Plane(int speed, double cost, String purchaseType, int numPassengers, String engineType, int numEngine, int wingspan){
         super(speed, cost, purchaseType, numPassengers, engineType);
         this.numEngine = numEngine;
         this.wingspan = wingspan;
