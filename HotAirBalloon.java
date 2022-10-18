@@ -9,15 +9,28 @@ public class HotAirBalloon extends AirTransportation {
         this.numBurners = numBurners;
     }
 
-    public String pattern(){
-        return this.pattern;
-    }
+    public String pattern(){ return this.pattern; }
 
     public int getNumBurners(){ return this.numBurners; }
 
     public void setPattern(String pattern) {this.pattern = pattern; }
 
     public void setNumBurners(int numBurners) { this.numBurners = numBurners; }
+    
+    public double totalCost(){
+        int numPassengers = getNumPassengers();
+        double costPerTicket = getCost();
+
+        double finalTotalCost = numPassengers * costPerTicket;
+
+        return finalTotalCost;
+    }
+    
+    public String location(){
+        String balloonLocation = "Go to Ogden Park at 9:30am";
+        return balloonLocation;
+    }
+    
     @Override
     public String toString(){
         return String.format("%sPattern:%-12sNumber of Burners:%-10s%n",super.toString(), pattern, numBurners);
