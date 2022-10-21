@@ -33,7 +33,7 @@ public class Boat extends Transportation{
     }
 
     public String location(){
-        String boatLocation = "Go to White Lake at 2:30pm.";
+        String boatLocation = "Go to the Nauti Times shop at 2:30pm.";
         return boatLocation;
     }
 
