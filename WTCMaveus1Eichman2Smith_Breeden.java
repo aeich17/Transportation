@@ -1,24 +1,29 @@
 import java.util.Scanner;
 public class WTCMaveus1Eichman2Smith_Breeden {
     public static void main(String[]args){
-        Bus bus = new Bus(45,35.00,"Ticket", 50, 6, "Gas", 10,"Blue");
-        Automobile car = new Automobile(60,150.50,"Rent",5,4,"Electric","Tesla","Model S");
-        Bike bike = new Bike(25,30.00,"Rent", 1, 2, "Human", 4,"Street");
-        Train train = new Train(55, 12.50, "Ticket",500,8+(4*5),"Diesel",5,"Automated Train");
-        
-        Plane plane = new Plane(515, 300.00, "Ticket", 140, "jet", 2, 225);
-        Dirigible dirigible = new Dirigible(40, 100, "Ticket", 30, "propeller", 132000, 192);
-        Helicopter helicopter = new Helicopter(130, 200, "Ticket", 6, "Turbine", 1, 30);
-        HotAirBalloon hotAirBalloon = new HotAirBalloon(10, 40, "Ticket", 4, "Burner", "Checkered", 2);
+        Bus bus = new Bus("Ticket",45,45, 35.00, 6, "Gas", 10,"Blue");
+        Automobile car = new Automobile("Rent",60,60,150.50,4,"Electric","Tesla","Model S");
+        Bike bike = new Bike("Rent",25,1, 30.00, 2, "Human", 4,"Street");
+        Train train = new Train("Ticket", 55, 500,12.50,8+(4*5),"Diesel",5,"Automated Train");
 
+        Plane plane = new Plane("Ticket", 515, 140, 300.00, "jet", 2, 225);
+        Dirigible dirigible = new Dirigible("Ticket", 40, 30, 100.00, "propeller", 132000, 192);
+        Helicopter helicopter = new Helicopter("Ticket", 130, 6, 200.00, "Turbine", 1, 30);
+        HotAirBalloon hotAirBalloon = new HotAirBalloon("Ticket", 10, 4, 40, "Burner", "Checkered", 2);
+
+        Boat boat = new Boat("Rent", 60, 10, 400.00, "Outboard engine", "White");
+        Ship ship = new Ship("Ticket", 25, 900, 150, "Cruise", 1500);
+        Submarine submarine = new Submarine("Ticket", 40, 75, 175.00, "Nuclear power", 5);
+        
         Scanner input = new Scanner(System.in);
 
         System.out.printf("By which means would you like to travel?%n1.Air%n2.Water%n3.Land%n");
+        System.out.print("Enter: ");
         int transportationType = input.nextInt();
 
         if(transportationType == 1){
             System.out.printf("%s%n","Air Travel Types");
-            
+
             System.out.printf("%-15s","1. Plane");
             System.out.printf("Average Speed(mph):%-20d$%-20.2fPurchase Type:%-20sPassengers:%-20d%n",plane.getSpeed(),plane.getCost(),plane.getPurchaseType(),plane.getNumPassengers());
 
@@ -32,6 +37,7 @@ public class WTCMaveus1Eichman2Smith_Breeden {
             System.out.printf("Average Speed(mph):%-20d$%-20.2fPurchase Type:%-20sPassengers:%-20d%n",hotAirBalloon.getSpeed(),hotAirBalloon.getCost(),hotAirBalloon.getPurchaseType(),hotAirBalloon.getNumPassengers());
 
             System.out.println("Which mode of transportation would you like to use? 1-4");
+            System.out.print("Enter: ");
             int transChoice = input.nextInt();
 
             String choice = "N";
@@ -41,84 +47,183 @@ public class WTCMaveus1Eichman2Smith_Breeden {
                     System.out.printf("%-10s", "Plane");
                     System.out.print(plane);
                     System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
                     choice = input.next();
                     if (choice.equals("y") || choice.equals("Y")) {
                         break;
                     }
                     else {
                         System.out.println("Which mode of transportation would you like to use? 1-4");
+                        System.out.print("Enter: ");
                         transChoice = input.nextInt();
                     }
                 } else if(transChoice ==2){
                     System.out.printf("%-10s","Dirigible");
                     System.out.print(dirigible);
                     System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
                     choice = input.next();
                     if(choice.equals("y")||choice.equals("Y")){
                         break;
                     }
                     else{
                         System.out.println("Which mode of transportation would you like to use? 1-4");
+                        System.out.print("Enter: ");
                         transChoice = input.nextInt();
                     }
                 } else if(transChoice ==3){
                     System.out.printf("%-10s","Helicopter");
                     System.out.print(helicopter);
                     System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
                     choice = input.next();
                     if(choice.equals("y")||choice.equals("Y")){
                         break;
                     }
                     else{
                         System.out.println("Which mode of transportation would you like to use? 1-4");
+                        System.out.print("Enter: ");
                         transChoice = input.nextInt();
                     }
                 } else if(transChoice ==4){
                     System.out.printf("%-10s","Hot Air Balloon");
                     System.out.print(hotAirBalloon);
                     System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
                     choice = input.next();
                     if(choice.equals("y")||choice.equals("Y")){
                         break;
                     }
                     else{
                         System.out.println("Which mode of transportation would you like to use? 1-4");
+                        System.out.print("Enter: ");
                         transChoice = input.nextInt();
                     }
                 }
             }
 
             if(transChoice == 1){
-                System.out.println("How many passengers are going to be");
+                System.out.print("How many passengers are going to be: ");
                 int ticketsNeeded = input.nextInt();
+                System.out.println("");
                 bus.setNumPassengers(ticketsNeeded);
                 System.out.printf("The total cost is $%.2f%n",plane.totalCost());
                 System.out.println(plane.location());
             }
             else if(transChoice == 2){
-                System.out.println("How many passengers are going to be");
+                System.out.print("How many passengers are going to be: ");
                 int ticketsNeeded = input.nextInt();
+                System.out.println("");
                 train.setNumPassengers(ticketsNeeded);
                 System.out.printf("The total cost is $%.2f%n",dirigible.totalCost());
                 System.out.println(dirigible.location());
             }
             else if(transChoice == 3){
-                System.out.println("How many passengers are going to be");
+                System.out.print("How many passengers are going to be: ");
                 int ticketsNeeded = input.nextInt();
+                System.out.println("");
                 train.setNumPassengers(ticketsNeeded);
                 System.out.printf("The total cost is $%.2f%n",helicopter.totalCost());
                 System.out.println(helicopter.location());
             }
             else{
-                System.out.println("How many passengers are going to be");
+                System.out.print("How many passengers are going to be: ");
                 int ticketsNeeded = input.nextInt();
+                System.out.println("");
                 System.out.printf("The total cost is $%.2f%n",hotAirBalloon.totalCost());
                 System.out.println(hotAirBalloon.location());
             }
-            
+
         } else if (transportationType ==2) {
             System.out.printf("%s%n","Water Travel Types");
+            System.out.printf("%-15s","1. Boat");
+            System.out.printf("Average Speed(mph):%-20d$%-20.2fPurchase Type:%-20sPassengers:%-20d%n",boat.getSpeed(),boat.getCost(),boat.getPurchaseType(),boat.getNumPassengers());
+
+            System.out.printf("%-15s","2. Ship");
+            System.out.printf("Average Speed(mph):%-20d$%-20.2fPurchase Type:%-20sPassengers:%-20d%n",ship.getSpeed(),ship.getCost(),ship.getPurchaseType(),ship.getNumPassengers());
+
+            System.out.printf("%-15s","3. Submarine");
+            System.out.printf("Average Speed(mph):%-20d$%-20.2fPurchase Type:%-20sPassengers:%-20d%n",submarine.getSpeed(),submarine.getCost(),submarine.getPurchaseType(),submarine.getNumPassengers());
+
+            System.out.println("Which mode of transportation would you like to use? 1-3");
+            System.out.print("Enter: ");
+            int transChoice = input.nextInt();
+
+            String choice = "N";
+
+            while(choice != "Y"||choice !="y"){
+                if(transChoice ==1){
+                    System.out.printf("%-10s","Boat");
+                    System.out.print(boat);
+                    System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
+                    choice = input.next();
+                    if(choice.equals("y")||choice.equals("Y")){
+                        break;
+                    }
+                    else{
+                        System.out.println("Which mode of transportation would you like to use? 1-3");
+                        System.out.print("Enter: ");
+                        transChoice = input.nextInt();
+                    }
+                }
+                else if(transChoice ==2){
+                    System.out.printf("%-10s","Ship");
+                    System.out.print(ship);
+                    System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
+                    choice = input.next();
+                    if(choice.equals("y")||choice.equals("Y")){
+                        break;
+                    }
+                    else{
+                        System.out.println("Which mode of transportation would you like to use? 1-4");
+                        System.out.print("Enter: ");
+                        transChoice = input.nextInt();
+                    }
+                }
+                else if(transChoice ==3){
+                    System.out.printf("%-10s","Submarine");
+                    System.out.print(submarine);
+                    System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
+                    choice = input.next();
+                    if(choice.equals("y")||choice.equals("Y")){
+                        break;
+                    }
+                    else{
+                        System.out.println("Which mode of transportation would you like to use? 1-4");
+                        System.out.print("Enter: ");
+                        transChoice = input.nextInt();
+                    }
+                }
+            }
+            if(transChoice == 1){
+                System.out.print("How many passengers are going to be: ");
+                int ticketsNeeded = input.nextInt();
+                System.out.println("");
+                boat.setNumPassengers(ticketsNeeded);
+                System.out.printf("The total cost is $%.2f%n",boat.totalCost());
+                System.out.println(boat.location());
+            }
+            else if(transChoice == 2){
+                System.out.print("How many passengers are going to be: ");
+                int ticketsNeeded = input.nextInt();
+                System.out.println("");
+                ship.setNumPassengers(ticketsNeeded);
+                System.out.printf("The total cost is $%.2f%n",ship.totalCost());
+                System.out.println(ship.location());
+            }
+            else {
+                System.out.print("How many passengers are going to be: ");
+                int ticketsNeeded = input.nextInt();
+                System.out.println("");
+                submarine.setNumPassengers(ticketsNeeded);
+                System.out.printf("The total cost is $%.2f%n",submarine.totalCost());
+                System.out.println(submarine.location());
+            }
         }
+
         else{
             System.out.printf("%s%n","Land Travel Types");
 
@@ -144,12 +249,14 @@ public class WTCMaveus1Eichman2Smith_Breeden {
                     System.out.printf("%-10s","Bus");
                     System.out.print(bus);
                     System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
                     choice = input.next();
                     if(choice.equals("y")||choice.equals("Y")){
                         break;
                     }
                     else{
                         System.out.println("Which mode of transportation would you like to use? 1-4");
+                        System.out.print("Enter: ");
                         transChoice = input.nextInt();
                     }
                 }
@@ -157,12 +264,14 @@ public class WTCMaveus1Eichman2Smith_Breeden {
                     System.out.printf("%-10s","Automobile");
                     System.out.print(car);
                     System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
                     choice = input.next();
                     if(choice.equals("y")||choice.equals("Y")){
                         break;
                     }
                     else{
                         System.out.println("Which mode of transportation would you like to use? 1-4");
+                        System.out.print("Enter: ");
                         transChoice = input.nextInt();
                     }
                 }
@@ -170,12 +279,14 @@ public class WTCMaveus1Eichman2Smith_Breeden {
                     System.out.printf("%-10s","Bike");
                     System.out.print(bike);
                     System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
                     choice = input.next();
                     if(choice.equals("y")||choice.equals("Y")){
                         break;
                     }
                     else{
                         System.out.println("Which mode of transportation would you like to use? 1-4");
+                        System.out.print("Enter: ");
                         transChoice = input.nextInt();
                     }
                 }
@@ -183,38 +294,45 @@ public class WTCMaveus1Eichman2Smith_Breeden {
                     System.out.printf("%-10s","Train");
                     System.out.print(train);
                     System.out.println("Is this the transportation that you want? Y or N");
+                    System.out.print("Enter: ");
                     choice = input.next();
                     if(choice.equals("y")||choice.equals("Y")){
                         break;
                     }
                     else{
                         System.out.println("Which mode of transportation would you like to use? 1-4");
+                        System.out.print("Enter: ");
                         transChoice = input.nextInt();
                     }
                 }
             }
             if(transChoice == 1){
-                System.out.println("How many passengers are going to be");
+                System.out.print("How many passengers are going to be: ");
                 int ticketsNeeded = input.nextInt();
+                System.out.println("");
                 bus.setNumPassengers(ticketsNeeded);
                 System.out.printf("The total cost is $%.2f%n",bus.totalCost());
                 System.out.println(bus.location());
             }
             else if(transChoice == 4){
-                System.out.println("How many passengers are going to be");
+                System.out.print("How many passengers are going to be: ");
                 int ticketsNeeded = input.nextInt();
+                System.out.println("");
                 train.setNumPassengers(ticketsNeeded);
                 System.out.printf("The total cost is $%.2f%n",train.totalCost());
                 System.out.println(train.location());
             }
             else if(transChoice == 2){
+                System.out.println("");
                 System.out.printf("The total cost is $%.2f%n",car.getCost());
                 System.out.println(car.location());
             }
             else{
+                System.out.println("");
                 System.out.printf("The total cost is $%.2f%n",bike.getCost());
                 System.out.println(bike.location());
             }
         }
+        
     }
 }
