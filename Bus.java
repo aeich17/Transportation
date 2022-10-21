@@ -1,3 +1,9 @@
+/**
+ * PROGRAM PURPOSE: Serves as a bus that is available to have a ticket purchased on  
+ * Name: Joey Maveus
+ * Date: 10/18/2022
+ * Section: CSC 331-001
+*/
 public class Bus extends LandTransportation{
     private int numWindows;
     private String color;
@@ -22,7 +28,7 @@ public class Bus extends LandTransportation{
     public void setColor(String color) {
         this.color = color;
     }
-    public double totalCost(){
+    public double totalCost(){//Since a bus uses a ticket instead of rent for a day this calculates how much your total will be based on how many tickets you purchase.
         int numPassengers = getNumPassengers();
         double costPerTicket = getCost();
 
