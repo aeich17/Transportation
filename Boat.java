@@ -21,4 +21,24 @@ public class Boat extends Transportation{
         this.color = color;
     }
 
+    public double totalCost(){
+        int numPassengers = getNumPassengers();
+        double costPerTicket = getCost();
+        if (getPurchaseType().equals("Rent")){
+            return costPerTicket;
+        } else {
+            double finalTotalCost = numPassengers * costPerTicket;
+            return finalTotalCost;
+        }
+    }
+
+    public String location(){
+        String boatLocation = "Go to White Lake at 2:30pm.";
+        return boatLocation;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("%sEngine type: %-10s%nColor: %-10s%n",super.toString(),engineType,color);
+    }
 }
