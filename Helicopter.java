@@ -1,3 +1,11 @@
+/**
+ * Adam Eichman
+ * 10/21/2022
+ * CSC 331-001
+ * Helicopter
+ * Subclass of AirTransportation which gives further details on a certain Helicopter
+ */
+
 public class Helicopter extends AirTransportation {
     private int numRotors;
     private int length;
