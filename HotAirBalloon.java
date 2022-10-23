@@ -1,3 +1,11 @@
+/**
+ * Adam Eichman
+ * 10/21/2022
+ * CSC 331-001
+ * HotAirBalloon
+ * Subclass of AirTransportation which gives further details on a certain Hot Air Balloon
+ */
+
 public class HotAirBalloon extends AirTransportation {
     private String pattern;
     private int numBurners;
