@@ -1,3 +1,11 @@
+/**
+ * Adam Eichman
+ * 10/21/2022
+ * CSC 331-001
+ * Dirigible
+ * Subclass of AirTransportation which gives further details on a certain dirigible
+ */
+
 public class Dirigible extends AirTransportation  {
     private int volume;
     private int length;
