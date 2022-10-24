@@ -1,3 +1,9 @@
+/**
+ * PROGRAM PURPOSE: Serves as a Train that is available to have a ticket purchased to ride on 
+ * Name: Joey Maveus
+ * Date: 10/18/2022
+ * Section: CSC 331-001
+*/
 public class Train extends LandTransportation{
     private int numCars;
     private String trainDriver;
@@ -33,7 +39,7 @@ public class Train extends LandTransportation{
     public String toString(){
         return String.format("%sNumber of Cars:%-13dDriver Type:%-10s%n",super.toString(),numCars,trainDriver);
     }
-    public double totalCost(){
+    public double totalCost(){//calculates the overall cost for all tickets being purchased
         int numPassengers = getNumPassengers();
         double costPerTicket = getCost();
 
