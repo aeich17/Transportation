@@ -37,4 +37,7 @@ public class Transportation {
     public void setCost(double cost) {
         this.cost = cost;
     }
+    @Override
+    public String toString(){
+        return String.format("Average Speed:%-10dCost:$%-10.2fPurchase Type:%-10sPassengers:%-10d",speed,cost,purchaseType,numPassengers);
 }
