@@ -2,8 +2,8 @@ public class Ship extends Transportation{
     private String purpose;
     private double maxCargo;
 
-    public Ship(String purchaseType, int speed, int numPassengers, double cost, String purpose, double maxCargo) {
-        super(purchaseType, speed, numPassengers, cost);
+    public Ship( int speed, double cost, String purchaseType, int numPassengers,  String purpose, double maxCargo) {
+        super(speed, cost, purchaseType, numPassengers);
         this.purpose = purpose;
         this.maxCargo = maxCargo;
     }

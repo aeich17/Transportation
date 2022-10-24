@@ -2,8 +2,8 @@ public class Boat extends Transportation{
     private String engineType;
     private String color;
 
-    public Boat(String purchaseType, int speed, int numPassengers, double cost, String engineType, String color) {
-        super(purchaseType, speed, numPassengers, cost);
+    public Boat(int speed,String purchaseType, int numPassengers, double cost, String engineType, String color) {
+        super(speed, cost, purchaseType, numPassengers);
         this.engineType = engineType;
         this.color = color;
     }

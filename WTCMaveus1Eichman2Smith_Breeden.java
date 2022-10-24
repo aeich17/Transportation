@@ -1,18 +1,18 @@
 import java.util.Scanner;
 public class WTCMaveus1Eichman2Smith_Breeden {
     public static void main(String[]args){
-        Bus bus = new Bus("Ticket",45,45, 35.00, 6, "Gas", 10,"Blue");
-        Automobile car = new Automobile("Rent",60,60,150.50,4,"Electric","Tesla","Model S");
-        Bike bike = new Bike("Rent",25,1, 30.00, 2, "Human", 4,"Street");
-        Train train = new Train("Ticket", 55, 500,12.50,8+(4*5),"Diesel",5,"Automated Train");
+        Bus bus = new Bus(45,35.00,"Ticket", 50, 6, "Gas", 10,"Blue");
+        Automobile car = new Automobile(60,150.50,"Rent",5,4,"Electric","Tesla","Model S");
+        Bike bike = new Bike(25,30.00,"Rent", 1, 2, "Human", 4,"Street");
+        Train train = new Train(55, 12.50, "Ticket",500,8+(4*5),"Diesel",5,"Automated Train");
 
-        Plane plane = new Plane("Ticket", 515, 140, 300.00, "jet", 2, 225);
-        Dirigible dirigible = new Dirigible("Ticket", 40, 30, 100.00, "propeller", 132000, 192);
-        Helicopter helicopter = new Helicopter("Ticket", 130, 6, 200.00, "Turbine", 1, 30);
-        HotAirBalloon hotAirBalloon = new HotAirBalloon("Ticket", 10, 4, 40, "Burner", "Checkered", 2);
+        Plane plane = new Plane( 515,300.00,"Ticket",140, "jet", 2, 225);
+        Dirigible dirigible = new Dirigible(40,100.00,"Ticket",  30,  "propeller", 132000, 192);
+        Helicopter helicopter = new Helicopter(130,200.00,"Ticket",  6,  "Turbine", 1, 30);
+        HotAirBalloon hotAirBalloon = new HotAirBalloon(10,40,"Ticket",  4,  "Burner", "Checkered", 2);
 
-        Boat boat = new Boat("Rent", 60, 10, 400.00, "Outboard engine", "White");
-        Ship ship = new Ship("Ticket", 25, 900, 150, "Cruise", 1500);
+        Boat boat = new Boat(60,"Rent",  10, 400.00, "Outboard engine", "White");
+        Ship ship = new Ship(25,150,"Ticket",  900,  "Cruise", 1500);
         Submarine submarine = new Submarine("Ticket", 40, 75, 175.00, "Nuclear power", 5);
         
         Scanner input = new Scanner(System.in);
@@ -24,16 +24,16 @@ public class WTCMaveus1Eichman2Smith_Breeden {
         if(transportationType == 1){
             System.out.printf("%s%n","Air Travel Types");
 
-            System.out.printf("%-15s","1. Plane");
+            System.out.printf("%-20s","1. Plane");
             System.out.printf("Average Speed(mph):%-20d$%-20.2fPurchase Type:%-20sPassengers:%-20d%n",plane.getSpeed(),plane.getCost(),plane.getPurchaseType(),plane.getNumPassengers());
 
-            System.out.printf("%-15s","2. Dirigible");
+            System.out.printf("%-20s","2. Dirigible");
             System.out.printf("Average Speed(mph):%-20d$%-20.2fPurchase Type:%-20sPassengers:%-20d%n",dirigible.getSpeed(),dirigible.getCost(),dirigible.getPurchaseType(),dirigible.getNumPassengers());
 
-            System.out.printf("%-15s","3. Helicopter");
+            System.out.printf("%-20s","3. Helicopter");
             System.out.printf("Average Speed(mph):%-20d$%-20.2fPurchase Type:%-20sPassengers:%-20d%n",helicopter.getSpeed(),helicopter.getCost(),helicopter.getPurchaseType(),helicopter.getNumPassengers());
 
-            System.out.printf("%-15s","4. Hot Air Balloon");
+            System.out.printf("%-20s","4. Hot Air Balloon");
             System.out.printf("Average Speed(mph):%-20d$%-20.2fPurchase Type:%-20sPassengers:%-20d%n",hotAirBalloon.getSpeed(),hotAirBalloon.getCost(),hotAirBalloon.getPurchaseType(),hotAirBalloon.getNumPassengers());
 
             System.out.println("Which mode of transportation would you like to use? 1-4");
@@ -57,7 +57,8 @@ public class WTCMaveus1Eichman2Smith_Breeden {
                         System.out.print("Enter: ");
                         transChoice = input.nextInt();
                     }
-                } else if(transChoice ==2){
+                }
+                else if(transChoice ==2){
                     System.out.printf("%-10s","Dirigible");
                     System.out.print(dirigible);
                     System.out.println("Is this the transportation that you want? Y or N");
@@ -130,11 +131,14 @@ public class WTCMaveus1Eichman2Smith_Breeden {
                 System.out.print("How many passengers are going to be: ");
                 int ticketsNeeded = input.nextInt();
                 System.out.println("");
+                hotAirBalloon.setNumPassengers(ticketsNeeded);
                 System.out.printf("The total cost is $%.2f%n",hotAirBalloon.totalCost());
                 System.out.println(hotAirBalloon.location());
             }
 
-        } else if (transportationType ==2) {
+        }
+
+        else if (transportationType ==2) {
             System.out.printf("%s%n","Water Travel Types");
             System.out.printf("%-15s","1. Boat");
             System.out.printf("Average Speed(mph):%-20d$%-20.2fPurchase Type:%-20sPassengers:%-20d%n",boat.getSpeed(),boat.getCost(),boat.getPurchaseType(),boat.getNumPassengers());

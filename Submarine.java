@@ -4,7 +4,7 @@ public class Submarine extends Transportation{
 
 
     public Submarine(String purchaseType, int speed, int numPassengers, double cost, String powerSource, int windows) {
-        super(purchaseType, speed, numPassengers, cost);
+        super(speed, cost, purchaseType, numPassengers);
         this.powerSource = powerSource;
         this.windows = windows;
     }

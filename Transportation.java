@@ -1,13 +1,29 @@
 public class Transportation {
-    private String purchaseType;
     private int speed;
-    private int numPassengers;
     private double cost;
+    private String purchaseType;
+    private int numPassengers;
 
-    public Transportation(String purchaseType, int speed, int numPassengers, double cost) {
-        this.purchaseType = purchaseType;
+    public Transportation(int speed, double cost, String purchaseType, int numPassengers) {
         this.speed = speed;
+        this.cost = cost;
+        this.purchaseType = purchaseType;
         this.numPassengers = numPassengers;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
@@ -15,29 +31,20 @@ public class Transportation {
         return purchaseType;
     }
 
-    public int getSpeed() {
-        return speed;
-    }
-    public int getNumPassengers() {
-        return numPassengers;
-    }
-    public double getCost() {
-        return cost;
-    }
-
     public void setPurchaseType(String purchaseType) {
         this.purchaseType = purchaseType;
     }
-    public void setSpeed(int speed) {
-        this.speed = speed;
+
+    public int getNumPassengers() {
+        return numPassengers;
     }
+
     public void setNumPassengers(int numPassengers) {
         this.numPassengers = numPassengers;
     }
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
+
     @Override
     public String toString(){
         return String.format("Average Speed:%-10dCost:$%-10.2fPurchase Type:%-10sPassengers:%-10d",speed,cost,purchaseType,numPassengers);
+    }
 }

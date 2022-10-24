@@ -23,6 +23,6 @@ public class AirTransportation extends Transportation {
 
     @Override
     public String toString(){
-        return String.format("Engine Type:%-10s",super.toString(), engineType);
+        return String.format("%sEngine Type:%-10s",super.toString(), engineType);
     }
 }

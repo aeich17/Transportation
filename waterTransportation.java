@@ -1,7 +1,7 @@
 public class waterTransportation extends Transportation{
 
     waterTransportation(String purchaseType, int speed, int numPassengers, double cost){
-        super(purchaseType, speed, numPassengers, cost);
+        super(speed, cost, purchaseType, numPassengers);
     }
 
     @Override
